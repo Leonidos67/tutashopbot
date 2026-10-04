@@ -6,11 +6,11 @@ module.exports = async (req, res) => {
     const pending = await getCollection('pending_payments');
     const users = await getCollection('users');
 
-    const hourAgo = new Date(Date.now() - 60 * 60 * 1000);
+    const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
     const toRemind = await pending.find({
       reminded: false,
-      created_at: { $lt: hourAgo }
+      created_at: { $lt: dayAgo }
     }).toArray();
 
     let sent = 0;
