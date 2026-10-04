@@ -1,4 +1,3 @@
-require('dotenv').config();
 const bot = require('../lib/bot');
 
 module.exports = async (req, res) => {
