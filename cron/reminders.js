@@ -22,7 +22,6 @@ module.exports = async (req, res) => {
         await bot.telegram.sendMessage(p.user_id,
           `🎬 Ты не завершил покупку\n\n` +
           `Видео: ${p.video_title}\n` +
-          `Цена: ${p.price}⭐\n\n` +
           `Продолжить?`,
           {
             reply_markup: {
